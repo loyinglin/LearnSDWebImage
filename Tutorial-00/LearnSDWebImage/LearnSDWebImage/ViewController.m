@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "SDWebImageManager.h"
+#import "UIImageView+WebCache.h"
 
 @interface ViewController ()
 
@@ -17,6 +19,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    
+    [imageView sd_setImageWithURL:[NSURL URLWithString:@"http://upload-images.jianshu.io/upload_images/1049769-f1416cc30e546919.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"]];
+    
+    [self.view addSubview:imageView];
+    
 }
 
 - (void)didReceiveMemoryWarning {
